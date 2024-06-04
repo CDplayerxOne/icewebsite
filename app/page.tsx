@@ -1,4 +1,7 @@
 "use client";
+// Author: Corey Dai
+// Date: June 3rd, 2024
+// Description: Home Page
 
 import Image from "next/image";
 import bannerBackground from "../public/background.gif";
@@ -88,49 +91,46 @@ export default function Home() {
         </p>
       </div>
       <Parallax speed={30}>
-        <div className="h-screen w-full bg-blue-200 flex-col flex pt-16">
+        <div className="slide bg-blue-200 flex-col pt-16">
           <div className="h-24 flex justify-center">
             <h1 className="text-7xl font-bold m-8">Explore Sectors</h1>
           </div>
           <div className="grow flex items-center justify-center">
-            <div className="rounded-3xl w-2/5 h-5/6 bg-black mr-16 overflow-hidden relative shadow-xl">
+            {/* Cards with information */}
+            <div className="card mr-16  shadow-xl">
               <Image
                 src={Education}
                 alt="firefly generated teacher teaching students"
-                className="h-full"
+                className="card-image"
               />
-              <div className="absolute bottom-0 h-1/3 w-full bg-white z-50 flex flex-col">
-                <h2 className="font-bold text-xl pt-4 px-8">Education</h2>
-                <p className="text-md px-8">
+              <div className="card-container">
+                <h2 className="card-title">Education</h2>
+                <p className="card-text">
                   With the rise of generative AI such as ChatGPT, Gemini and
                   other tools, the landscape in the classroom has completely
                   changed.
                 </p>
                 <Link href={"/education"}>
-                  <button className="text-white bg-blue-700 text-md rounded-xl w-32 p-2 m-4 ml-8 absolute bottom-0 hover:bg-blue-600">
-                    Learn More
-                  </button>
+                  <button className="card-button">Learn More</button>
                 </Link>
               </div>
             </div>
-            <div className="rounded-3xl w-2/5 h-5/6 bg-black ml-16 overflow-hidden relative shadow-xl">
+            <div className="card ml-16  shadow-xl">
               <Image
                 src={Stock}
                 alt="firefly generated teacher teaching students"
-                className="h-full"
+                className="card-image"
               />
-              <div className="absolute bottom-0 h-1/3 w-full bg-white z-10 flex flex-col">
-                <h2 className="font-bold text-xl pt-4 px-8">Economy</h2>
-                <p className="text-md px-8">
+              <div className="card-container">
+                <h2 className="card-title">Economy</h2>
+                <p className="card-text">
                   The industry of producing AI is rapidly growing and is on
                   course to accumulate a value increasing in the billions per
                   year. The use of AI within companies and organizations has
                   also revolutionized work.
                 </p>
                 <Link href={"/economy"}>
-                  <button className="text-white bg-blue-700 text-md w-32 rounded-xl p-2 m-4 ml-8 absolute bottom-0 hover:bg-blue-600">
-                    Learn More
-                  </button>
+                  <button className="card-button">Learn More</button>
                 </Link>
               </div>
             </div>

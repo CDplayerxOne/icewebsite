@@ -1,11 +1,139 @@
+/* Author: Corey Dai */
+/* Date: June 3rd, 2024 */
+/* Description: Styling */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* default stuff */
 :root {
   background-color: black;
+  --tw-text-opacity: 1;
+  --tw-bg-opacity: 1;
+  --blue: rgb(191 219 254);
 }
 
-.logo {
-  color: #a2e3ff;
+/* blue text */
+.blue-text {
+  color: var(--blue);
+}
+
+/* each section on a page */
+.slide {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+/* links in works cited */
+.link {
+  text-decoration-line: underline;
+  color: rgb(34 211 238);
+}
+
+/* homepage card */
+.card {
+  border-radius: 1.5rem;
+  width: 40%;
+  height: 83.333333%;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+  overflow: hidden;
+  position: relative;
+}
+
+/* homepage card image */
+.card-image {
+  height: 100%;
+}
+
+/* homepage card container */
+.card-container {
+  position: absolute;
+  bottom: 0px;
+  height: 33.333333%;
+  width: 100%;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+}
+
+/* homepage card title */
+.card-title {
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  padding-top: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+/* homepage card text */
+.card-text {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+/* homepage card button */
+.card-button {
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  background-color: rgb(29 78 216 / var(--tw-bg-opacity));
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  width: 8rem;
+  border-radius: 0.75rem;
+  padding: 0.5rem;
+  margin: 1rem;
+  position: absolute;
+  bottom: 0px;
+  margin-left: 2rem;
+}
+
+/* homepage card button on hover */
+.card-button:hover {
+  background-color: rgb(37 99 235 / var(--tw-bg-opacity));
+}
+
+/* info card */
+.info-tab {
+  height: 16rem;
+  border-radius: 0.75rem;
+  width: 83.333333%;
+  background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+/* info card title */
+.info-title {
+  font-weight: 700;
+  color: var(--blue);
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  width: 100%;
+}
+
+/* info card text */
+.info-text {
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  margin-top: 0.5rem;
+}
+
+/* navbar container */
+.nav {
+  position: fixed;
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  z-index: 50;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+  top: 0px;
+  left: 0px;
 }

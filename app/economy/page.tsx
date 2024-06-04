@@ -1,4 +1,7 @@
 "use client";
+// Author: Corey Dai
+// Date: June 3rd, 2024
+// Description: Economy Page
 
 import Image from "next/image";
 import Comic from "../../public/Economy comic.jpg";
@@ -10,10 +13,13 @@ import Link from "next/link";
 
 export default function Page() {
   return (
+    // Parallax
     <ParallaxProvider>
       <div className="w-full">
         <NavBar />
-        <div className="bg-blue-200 w-full h-screen overflow-hidden flex">
+        {/* Slide 1 */}
+        <div className="bg-blue-200 slide overflow-hidden ">
+          {/* Left Title */}
           <div className="basis-1/2 w-1/2 flex items-center justify-center p-8">
             <h1 className="text-black font-bold text-7xl text-center">
               Many Fear that AI Will Take Their Jobs
@@ -25,13 +31,17 @@ export default function Page() {
             className="w-1/2"
           />
         </div>
+        {/* Intermediary */}
         <div className="bg-black w-full flex flex-col justify-end items-center h-64">
           <h3 className="text-white font-bold text-9xl w-full text-center">
             And they{"'"}d be right...
           </h3>
         </div>
+        {/* Parallax allows for items to move at different speeds while scrolling */}
+        {/* Second slide */}
         <Parallax speed={50}>
-          <div className="w-full h-screen bg-black flex items-center justify-center border-none">
+          {/* Stats */}
+          <div className="slide bg-black  items-center justify-center border-none">
             <div className="basis-1/2 flex flex-col justify-center items-center h-full p-8 border-none">
               <h4 className="text-white font-bold text-8xl mt-24">
                 AI is Expected to Take <br />
@@ -50,16 +60,18 @@ export default function Page() {
             </div>
           </div>
         </Parallax>
+        {/*  Third Slide */}
         <Parallax speed={-10}>
-          <div className="w-full h-screen bg-black flex justify-center items-center">
-            <h1 className="text-8xl font-bold text-blue-200 text-center">
+          <div className="slide bg-black  justify-center items-center">
+            <h1 className="text-8xl font-bold blue-text text-center">
               The Real Threat is Being Outpaced By Those Who Use AI in the
               Workplace
             </h1>
           </div>
         </Parallax>
+        {/* 4th Slide */}
         <Parallax speed={30}>
-          <div className="w-full h-screen bg-blue-200 flex">
+          <div className="slide bg-blue-200 ">
             <div className="basis-1/2 flex justify-center items-center">
               <h1 className="text-7xl font-bold text-black text-center">
                 Employers are looking for People Skilled at Using AI
@@ -78,10 +90,11 @@ export default function Page() {
             </div>
           </div>
         </Parallax>
+        {/* Facts and Statistics */}
         <Parallax speed={-10}>
-          <div className="bg-black w-full h-screen flex p-8">
+          <div className="bg-black slide  p-8">
             <div className=" basis-1/2 flex flex-col items-center">
-              <h1 className="font-bold text-9xl text-blue-200 mb-12 w-full">
+              <h1 className="font-bold text-9xl blue-text mb-12 w-full">
                 Besides...
               </h1>
               <h3 className=" text-white text-7xl font-semibold">
@@ -109,7 +122,7 @@ export default function Page() {
               ></Image>
             </div>
           </div>
-          <div className="bg-black w-full h-screen flex p-8">
+          <div className="bg-black slide  p-8">
             <div className="basis-1/2 p-8">
               <p className="text-white">
                 The impact of AI is also visible through metrics on AI patents.
@@ -129,7 +142,7 @@ export default function Page() {
               ></Image>
             </div>
             <div className=" basis-1/2 flex flex-col items-center">
-              <h1 className="font-bold text-9xl text-blue-200 mb-12 w-full">
+              <h1 className="font-bold text-9xl blue-text mb-12 w-full">
                 And...
               </h1>
               <h3 className=" text-white text-7xl font-semibold">
@@ -141,18 +154,17 @@ export default function Page() {
           </div>
         </Parallax>
         <Parallax speed={30}>
-          <div className="w-full h-screen bg-blue-200 flex">
+          <div className="slide bg-blue-200 ">
             <div className="basis-1/2 flex justify-center items-center p-8">
               <h3 className="font-bold text-black text-7xl text-center">
                 As a Member of the Workforce, How Can You Keep Up?
               </h3>
             </div>
             <div className="basis-1/2 flex flex-col justify-center py-8">
-              <div className="h-64 rounded-xl w-5/6 bg-gray-900 py-4 px-8 mb-12 flex flex-col justify-center items-center">
-                <h3 className="font-bold text-blue-200 text-xl w-full">
-                  Learn AI
-                </h3>
-                <p className="text-white text-md mt-2">
+              {/* Info cards with title and text */}
+              <div className="mb-12 info-tab">
+                <h3 className="info-title">Learn AI</h3>
+                <p className="info-text">
                   Whether it{"'"}s through trying it out yourself and figuring
                   it out on your own, or taking a course, the best thing you can
                   do is learn. AI is going to be a big part of the future so it
@@ -162,11 +174,9 @@ export default function Page() {
                   60-70% of your time.
                 </p>
               </div>
-              <div className="h-64 rounded-xl w-5/6 bg-gray-900 py-4 px-8  flex flex-col justify-center items-center">
-                <h3 className="font-bold text-blue-200 text-xl w-full">
-                  Keep Up With the News
-                </h3>
-                <p className="text-white text-md mt-2">
+              <div className="info-tab">
+                <h3 className="info-title">Keep Up With the News</h3>
+                <p className="info-text">
                   Along with learning about how to use AI, it can be helpful to
                   keep up with the development of the technology. Always stay
                   active in terms of staying up to date so you know what is

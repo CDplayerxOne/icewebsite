@@ -1,4 +1,7 @@
 "use client";
+// Author: Corey Dai
+// Date: June 3rd, 2024
+// Description: Education Page
 
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 import NavBar from "../components/navBar";
@@ -7,26 +10,31 @@ import Image from "next/image";
 import ToolsImage from "../../public/AI Tools Logos.png";
 
 export default function Page() {
+  // Stores state. Since this is typescript, I can make custom types. "correct" can only be of types "left", "right" or null
+  // Determines which option user clicked
   const [correct, setCorrect] = useState<"left" | "right" | null>();
   return (
     <ParallaxProvider>
       <div className="w-full">
         <NavBar />
-        <div className="w-full h-screen flex-col flex bg-black px-8">
-          <h1 className="w-full flex justify-center text-9xl text-blue-200 font-bold mt-24 text-center text-wrap">
+        <div className="slide flex-col bg-black px-8">
+          <h1 className="w-full flex justify-center text-9xl blue-text font-bold mt-24 text-center text-wrap">
             Can You Guess Which Passage is AI Generated?
           </h1>
           <div className="grow flex">
             <div className="basis-1/2 flex justify-center items-center">
+              {/* Based on the value of correct, change colour */}
               <button
                 className={`w-5/6 h-5/6 rounded-xl p-4 ${
                   correct == "left"
                     ? "bg-red-600 hover:bg-red-500"
                     : "bg-gray-900 hover:bg-gray-800"
                 }`}
+                // on click, set the value of correct
                 onClick={() => setCorrect("left")}
                 disabled={correct != null}
               >
+                {/* only show if correct is equal to "left" */}
                 {correct == "left" && (
                   <div className="flex w-full justify-center">
                     <svg
@@ -53,15 +61,18 @@ export default function Page() {
               </button>
             </div>
             <div className="basis-1/2 flex justify-center items-center">
+              {/* Based on the value of correct, change colour */}
               <button
                 className={`w-5/6 h-5/6 rounded-xl p-4 ${
                   correct == "right"
                     ? "bg-green-600 hover:bg-green-500"
                     : "bg-gray-900 hover:bg-gray-800"
                 }`}
+                // on click, set the value of correct
                 onClick={() => setCorrect("right")}
                 disabled={correct != null}
               >
+                {/* only show if correct is equal to "right" */}
                 {correct == "right" && (
                   <div className="flex w-full justify-center">
                     <svg
@@ -94,7 +105,7 @@ export default function Page() {
           </div>
         </div>
         <Parallax speed={30}>
-          <div className="w-full h-screen bg-blue-200 z-10 flex">
+          <div className="slide bg-blue-200 z-10">
             <div className="h-full basis-1/2 flex flex-col justify-center items-center p-8">
               <h1 className="text-black font-bold text-center text-7xl">
                 This Is A New Challenge Teachers Will Now Face
@@ -107,6 +118,7 @@ export default function Page() {
               <h1 className="text-6xl font-bold mb-8">By the Numbers: </h1>
               <ol className="list-disc">
                 <li className="text-3xl m-8">
+                  {/* Different colour for this one word */}
                   <span className="font-bold">46%</span> of Students in Grades
                   10-12 Reported Using AI on School Assignments According to a
                   Survey Conducted by{" "}
@@ -135,7 +147,7 @@ export default function Page() {
           </div>
         </Parallax>
         <Parallax speed={-5}>
-          <div className="w-full h-screen bg-black flex">
+          <div className="slide bg-black">
             <div className="basis-1/2  h-full">
               <Image src={ToolsImage} alt="AI Images" className="h-full" />
             </div>
@@ -144,13 +156,14 @@ export default function Page() {
                 With Generative AI Tools becoming more accessible and
                 increasingly better, questions arise around plagiarism and
                 authenticity. Luckily, there are AI detection tools such as{" "}
+                {/* italics */}
                 <i>Turnitin</i>.
               </h3>
             </div>
           </div>
         </Parallax>
         <Parallax speed={30}>
-          <div className="w-full h-screen bg-blue-200 flex justify-center items-center p-24">
+          <div className="slide bg-blue-200 justify-center items-center p-24">
             <div>
               <h3 className="text-7xl font-bold text-black text-center">
                 The Education Industry Needs To Adjust to This New Age of AI
@@ -164,18 +177,18 @@ export default function Page() {
           </div>
         </Parallax>
         <Parallax speed={-10}>
-          <div className="w-full h-screen bg-black flex">
+          <div className="slide bg-black ">
             <div className="basis-1/2 flex justify-center items-center p-8">
-              <h3 className="font-bold text-blue-200 text-7xl text-center">
+              <h3 className="font-bold blue-text text-7xl text-center">
                 Benefits of AI in Education
               </h3>
             </div>
             <div className="basis-1/2 flex flex-col justify-between py-8">
-              <div className="h-64 rounded-xl w-5/6 bg-gray-900 py-4 px-8 flex flex-col justify-center items-center">
-                <h3 className="font-bold text-blue-200 text-xl w-full">
+              <div className="info-tab">
+                <h3 className="info-title">
                   Educational Games/AI Assisted Learning
                 </h3>
-                <p className="text-white text-md mt-2">
+                <p className="info-text">
                   Educational games and websites can take advantage of AI to
                   help enchance the learning experience. AI can help personalize
                   the experience for the student to further accelerate the
@@ -184,11 +197,9 @@ export default function Page() {
                   supercharge it.
                 </p>
               </div>
-              <div className="h-64 rounded-xl w-5/6 bg-gray-900 py-4 px-8  flex flex-col justify-center items-center">
-                <h3 className="font-bold text-blue-200 text-xl w-full">
-                  AI Tutors
-                </h3>
-                <p className="text-white text-md mt-2">
+              <div className="info-tab">
+                <h3 className="info-title">AI Tutors</h3>
+                <p className="info-text">
                   AI can also improve the tutoring landscape. With an in-person
                   tutor not always available, there is a need for reliable
                   online tutors. As the technology advances, online AI chatbots
@@ -198,11 +209,9 @@ export default function Page() {
                   GPT-4 that aims to provide on-demand tutoring.
                 </p>
               </div>
-              <div className="h-64 rounded-xl w-5/6 bg-gray-900 py-4 px-8 flex flex-col justify-center items-center">
-                <h3 className="font-bold text-blue-200 text-xl w-full">
-                  Automated Grading
-                </h3>
-                <p className="text-white text-md mt-2">
+              <div className="info-tab">
+                <h3 className="info-title">Automated Grading</h3>
+                <p className="info-text">
                   Grading can also be automated using AI. There are already
                   tools that do this that exist. It is well known that Mr.
                   Anthony automates much of his grading process, perhaps not by
@@ -216,7 +225,7 @@ export default function Page() {
           </div>
         </Parallax>
         <Parallax speed={30}>
-          <div className="w-full bg-blue-200 h-screen flex items-center">
+          <div className="slide bg-blue-200 items-center">
             <h1 className="text-9xl  font-bold text-center">
               For Better for Worse, AI Has an Impact on Education
             </h1>

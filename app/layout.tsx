@@ -1,8 +1,13 @@
+// Author: Corey Dai
+// Date: June 3rd, 2024
+// Description: Default Layout Template
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./Providers";
 
+// Default font
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -16,6 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    // Main HTML container
     <html lang="en">
       <body className={inter.className}>
         <Providers>{children}</Providers>
